@@ -44,7 +44,6 @@ func latest(baseURL string, request *artifactRequest) (*Artifact, error) {
 	var newest Artifact
 	for _, artifact := range artifacts {
 		if artifact.RepoID == request.Repository && artifact.Version > maxVersion {
-			fmt.Println(artifact.RepoID, artifact.GroupID, artifact.ArtifactID, artifact.Version, request.Repository)
 			newest = artifact
 			maxVersion = artifact.Version
 		}
